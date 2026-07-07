@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles/output.css">
+  <link rel="stylesheet" href="src/styles/app.css">
+  <title>Nova labs | نووا لبز</title>
+</head>
+<body class="bg-[#0B0E14] text-[#E6E6E6] font-fa antialiased">
+  <svg class="hidden">
+
+  </svg>
+  
+  <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-2 shrink-0">
+          <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
+          <span class="font-fa font-bold text-lg tracking-tight text-white">نووا لبز<span class="text-[#F2A65A]">.</span></span>
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-10 font-fa text-[15px] text-[#B8BEC9]">
+          <a href="/index.html" class="nav-link relative py-2">خانه</a>
+          <a href="/samples.html" class="nav-link relative py-2">نمونه‌کارها</a>
+          <a href="/blogs.html" class="nav-link relative py-2">مقالات</a>
+          <a href="/about-us.html" class="nav-link relative py-2">درباره ما</a>
+          <a href="/contact-us.html" class="nav-link relative py-2">تماس با ما</a>
+        </nav>
+
+        <!-- CTA -->
+        <div class="hidden md:block">
+          <a href="#start" class="cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+            شروع پروژه
+            <span class="font-mono">←</span>
+          </a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="menu-toggle" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 shrink-0" aria-label="باز کردن منو">
+          <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+          <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+          <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-[#0D1117] border-t border-white/5">
+      <nav class="flex flex-col px-6 py-6 gap-5 font-fa text-[#B8BEC9]">
+        <a href="#home" class="py-1">خانه</a>
+        <a href="#about" class="py-1">درباره ما</a>
+        <a href="#work" class="py-1">نمونه‌کارها</a>
+        <a href="#start" class="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm text-[#0B0E14] bg-[#F2A65A]">شروع پروژه</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero section -->
+    <section id="home" class="hero_section relative min-h-screen flex items-center overflow-hidden">
+
+      <!-- ambient grid + glow background -->
+      <div class="absolute inset-0 hero-grid pointer-events-none"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-140 h-140 rounded-full hero-glow pointer-events-none"></div>
+
+      <!-- floating code symbols -->
+      <span class="floaty absolute top-[22%] right-[8%] font-mono text-[#F2A65A]/20 text-4xl select-none" aria-hidden="true">{ }</span>
+      <span class="floaty absolute bottom-[18%] right-[18%] font-mono text-[#7FB77E]/20 text-3xl select-none" aria-hidden="true">&lt;/&gt;</span>
+      <span class="floaty absolute top-[38%] left-[6%] font-mono text-[#B8BEC9]/15 text-3xl select-none" aria-hidden="true">;</span>
+
+      <div class="relative max-w-7xl mx-auto px-6 lg:px-10 w-full">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Text content -->
+          <div class="text-center lg:text-right">
+            <p class="reveal font-mono text-sm tracking-wider text-[#F2A65A] mb-5">// novaLabs.config</p>
+
+            <h1 class="reveal font-fa font-extrabold text-white leading-tight text-4xl sm:text-5xl lg:text-[3.4rem] mb-6">
+              وب‌سایتی که <span class="text-[#F2A65A]">کدش</span> هم<br class="hidden lg:block">
+              به‌اندازه‌ی ظاهرش زیباست
+            </h1>
+
+            <p class="reveal font-fa text-[#9AA1AC] text-lg leading-8 max-w-lg mx-auto lg:mx-0 mb-10">
+              طراحی و توسعه‌ی وب‌سایت‌هایی سریع، بی‌نقص و خوش‌ساخت؛
+              از اولین خط کد تا لانچ نهایی.
+            </p>
+
+            <div class="reveal flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#start" class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg font-fa font-medium text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+                شروع پروژه
+                <span class="font-mono">←</span>
+              </a>
+              <a href="#work" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg font-fa font-medium text-[#E6E6E6] border border-white/10 hover:border-white/25 hover:bg-white/[0.03] transition-all duration-200">
+                دیدن نمونه‌کارها
+              </a>
+            </div>
+          </div>
+
+          <!-- Code editor signature element -->
+          <div class="reveal">
+            <div class="editor-window rounded-xl overflow-hidden shadow-2xl shadow-black/50 border border-white/6">
+              <div class="flex items-center gap-2 px-4 py-3 bg-[#11151C] border-b border-white/6">
+                <span class="w-3 h-3 rounded-full bg-[#FF5F56]"></span>
+                <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+                <span class="w-3 h-3 rounded-full bg-[#27C93F]"></span>
+                <span class="mr-2 font-mono text-xs text-[#6B7280]" dir="ltr">novaLabs.config.js</span>
+              </div>
+              <div class="editor-body font-mono text-[13px] sm:text-sm leading-7 px-5 py-6" dir="ltr">
+                <pre id="code-typer" class="whitespace-pre-wrap"></pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- stack section -->
+    <section class="stack_section relative py-16 overflow-hidden border-y border-white/6">
+      <p class="text-center tracking-widest text-[#6B7280] mb-8">
+        تکنولوژی هایی که ازشون استفاده میکنیم
+      </p>
+
+      <div class="stack-marquee" dir="ltr">
+        <div class="stack-track">
+          <span class="stack-item">Next.js</span>
+          <span class="stack-item">Laravel</span>
+          <span class="stack-item">React</span>
+          <span class="stack-item">three.js</span>
+          <span class="stack-item">GSAP</span>
+          <span class="stack-item">Python</span>
+          <span class="stack-item">TypeScript</span>
+          <span class="stack-item">Tailwind CSS</span>
+          <span class="stack-item">PostgreSQL</span>
+          <span class="stack-item">Docker</span>
+          <span class="stack-item">MongoDB</span>
+          <!-- تکرار برای لوپ بی‌نهایت -->
+          <span class="stack-item" aria-hidden="true">Next.js</span>
+          <span class="stack-item" aria-hidden="true">Laravel</span>
+          <span class="stack-item" aria-hidden="true">React</span>
+          <span class="stack-item" aria-hidden="true">Three.js</span>
+          <span class="stack-item" aria-hidden="true">TypeScript</span>
+          <span class="stack-item" aria-hidden="true">Tailwind CSS</span>
+          <span class="stack-item" aria-hidden="true">PostgreSQL</span>
+          <span class="stack-item" aria-hidden="true">Docker</span>
+          <span class="stack-item" aria-hidden="true">MongoDB</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- services section -->
+    <section id="services" class="services_section relative py-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-4">// SERVICES</p>
+          <h2 class="font-fa font-extrabold text-3xl sm:text-4xl text-white mb-4">
+            کاری که برات انجام می‌دیم
+          </h2>
+          <p class="font-fa text-[#9AA1AC] leading-7">
+            از اولین خط کد تا آخرین رتبه‌بندی گوگل؛ همه‌چیزو زیر یک سقف پوشش می‌دیم.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Front-end -->
+          <div class="svc-card">
+            <span class="svc-tag">// front-end</span>
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6.5l-3 11" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">توسعه فرانت‌اند</h3>
+            <p class="svc-desc">رابط‌های کاربری سریع، ریسپانسیو و روان با تکنولوژی‌های روز.</p>
+            <p class="svc-stack">React · Next.js · Tailwind</p>
+          </div>
+
+          <!-- Back-end -->
+          <div class="svc-card">
+            <span class="svc-tag">// back-end</span>
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <rect x="4" y="4" width="16" height="6" rx="1.5"/>
+                <rect x="4" y="14" width="16" height="6" rx="1.5"/>
+                <circle cx="7.5" cy="7" r="0.8" fill="currentColor" stroke="none"/>
+                <circle cx="7.5" cy="17" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">توسعه بک‌اند</h3>
+            <p class="svc-desc">معماری امن و مقیاس‌پذیر برای منطق، دیتابیس و API‌های پروژه.</p>
+            <p class="svc-stack">Node.js · Laravel · PostgreSQL</p>
+          </div>
+
+          <!-- SEO -->
+          <div class="svc-card">
+            <span class="svc-tag">// seo</span>
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="10.5" cy="10.5" r="6.5"/>
+                <path d="M15.5 15.5L20 20" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">بهینه‌سازی سئو</h3>
+            <p class="svc-desc">دیده‌شدن تو گوگل با ساختار فنی درست و محتوای هدفمند.</p>
+            <p class="svc-stack">Technical SEO · Core Web Vitals</p>
+          </div>
+
+          <!-- UX/UI -->
+          <div class="svc-card">
+            <span class="svc-tag">// ux-ui</span>
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4z" stroke-linejoin="round"/>
+                <path d="M15.5 15.5l4.5 4.5" stroke-linecap="round"/>
+                <circle cx="16.5" cy="16.5" r="2.3"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">طراحی UX/UI</h3>
+            <p class="svc-desc">تجربه‌ای که کاربر رو گیج نمی‌کنه؛ ساده، منطقی و دلنشین.</p>
+            <p class="svc-stack">Figma · User Flows · Prototyping</p>
+          </div>
+
+          <!-- Graphic -->
+          <div class="svc-card">
+            <span class="svc-tag">// graphic</span>
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="12" cy="12" r="8"/>
+                <circle cx="9" cy="10" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="15" cy="9" r="1" fill="currentColor" stroke="none"/>
+                <circle cx="15" cy="14" r="1" fill="currentColor" stroke="none"/>
+                <path d="M12 4a8 8 0 000 16c1.2 0 1.5-1 1-1.8-.5-.8 0-1.7 1-1.7h1.5A2.5 2.5 0 0020 14"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">طراحی گرافیک</h3>
+            <p class="svc-desc">هویت بصری، لوگو و المان‌های گرافیکی هماهنگ با برندت.</p>
+            <p class="svc-stack">Branding · Illustration</p>
+          </div>
+
+          <!-- Update/Upgrade -->
+          <div class="svc-card">
+            <span class="svc-tag">// upgrade</span>
+            <div class="svc-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M4 12a8 8 0 0113.5-5.8M20 12a8 8 0 01-13.5 5.8" stroke-linecap="round"/>
+                <path d="M17.5 4v3.2h-3.2M6.5 20v-3.2h3.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="svc-title">به‌روزرسانی سایت‌های قدیمی</h3>
+            <p class="svc-desc">ریفکتور و بازسازی سایت‌های کند و قدیمی با تکنولوژی امروزی.</p>
+            <p class="svc-stack">Migration · Performance</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- process cycle -->
+    <section id="process" class="process_section relative py-24 border-t border-white/6">
+      <div class="max-w-5xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center max-w-2xl mx-auto mb-20">
+          <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-4">// PROCESS</p>
+          <h2 class="font-fa font-extrabold text-3xl sm:text-4xl text-white mb-4">
+            از ایده تا لانچ
+          </h2>
+          <p class="font-fa text-[#9AA1AC] leading-7">
+            یه مسیر شفاف و بدون ابهام؛ همیشه می‌دونی پروژه‌ت الان کجاست.
+          </p>
+        </div>
+
+        <div class="proc-tree relative">
+          <div class="proc-center-line"></div>
+
+          <!-- 01 - right -->
+          <div class="proc-row">
+            <div class="proc-side"></div>
+            <div class="proc-node"><span class="proc-num">01</span></div>
+            <div class="proc-side proc-content">
+              <h3 class="proc-title">مشاوره و تحلیل نیاز</h3>
+              <p class="proc-desc">هدف، مخاطب و امکانات پروژه رو با هم مشخص می‌کنیم.</p>
+            </div>
+          </div>
+
+          <!-- 02 - left -->
+          <div class="proc-row">
+            <div class="proc-side proc-content">
+              <h3 class="proc-title">طراحی رابط کاربری</h3>
+              <p class="proc-desc">وایرفریم و طراحی بصری رو می‌سازیم و برات تأیید می‌گیریم.</p>
+            </div>
+            <div class="proc-node"><span class="proc-num">02</span></div>
+            <div class="proc-side"></div>
+          </div>
+
+          <!-- 03 - right -->
+          <div class="proc-row">
+            <div class="proc-side"></div>
+            <div class="proc-node"><span class="proc-num">03</span></div>
+            <div class="proc-side proc-content">
+              <h3 class="proc-title">توسعه و پیاده‌سازی</h3>
+              <p class="proc-desc">کدنویسی فرانت‌اند و بک‌اند، تمیز و اصولی.</p>
+            </div>
+          </div>
+
+          <!-- 04 - left -->
+          <div class="proc-row">
+            <div class="proc-side proc-content">
+              <h3 class="proc-title">تست و بازبینی</h3>
+              <p class="proc-desc">بررسی روی دستگاه‌ها و مرورگرهای مختلف، رفع باگ.</p>
+            </div>
+            <div class="proc-node"><span class="proc-num">04</span></div>
+            <div class="proc-side"></div>
+          </div>
+
+          <!-- 05 - right -->
+          <div class="proc-row">
+            <div class="proc-side"></div>
+            <div class="proc-node proc-node-last"><span class="proc-num">05</span></div>
+            <div class="proc-side proc-content">
+              <h3 class="proc-title">لانچ و پشتیبانی</h3>
+              <p class="proc-desc">سایت آنلاین میشه و بعدش هم کنارت می‌مونیم.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- work sample section -->
+    <section id="work" class="work_section relative py-24 border-t border-white/6">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-4">// WORK</p>
+          <h2 class="font-fa font-extrabold text-3xl sm:text-4xl text-white mb-4">
+            نمونه‌کارها
+          </h2>
+          <p class="font-fa text-[#9AA1AC] leading-7">
+            چند تا از پروژه‌هایی که ساختیم و بهشون افتخار می‌کنیم.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Project 01 -->
+          <a href="#" class="work-card group">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+01" alt="فروشگاه آنلاین کالای دیجیتال" loading="lazy">
+              <div class="work-overlay">
+                <span class="work-view">مشاهده پروژه ←</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">فروشگاه آنلاین دیجی‌کالا</h3>
+              <p class="work-tags">Next.js · Tailwind · Stripe</p>
+            </div>
+          </a>
+
+          <!-- Project 02 -->
+          <a href="#" class="work-card group">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+02" alt="سامانه مدیریت رستوران" loading="lazy">
+              <div class="work-overlay">
+                <span class="work-view">مشاهده پروژه ←</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">سامانه مدیریت رستوران</h3>
+              <p class="work-tags">Laravel · Vue.js · MySQL</p>
+            </div>
+          </a>
+
+          <!-- Project 03 -->
+          <a href="#" class="work-card group">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+03" alt="پلتفرم آموزش آنلاین" loading="lazy">
+              <div class="work-overlay">
+                <span class="work-view">مشاهده پروژه ←</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">پلتفرم آموزش آنلاین</h3>
+              <p class="work-tags">React · Node.js · MongoDB</p>
+            </div>
+          </a>
+
+          <!-- Project 04 -->
+          <a href="#" class="work-card group">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+04" alt="بازسازی سایت شرکتی قدیمی" loading="lazy">
+              <div class="work-overlay">
+                <span class="work-view">مشاهده پروژه ←</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">بازسازی سایت شرکتی قدیمی</h3>
+              <p class="work-tags">Next.js · Migration · SEO</p>
+            </div>
+          </a>
+
+          <!-- Project 05 -->
+          <a href="#" class="work-card group">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+05" alt="اپلیکیشن مدیریت پروژه" loading="lazy">
+              <div class="work-overlay">
+                <span class="work-view">مشاهده پروژه ←</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">اپلیکیشن مدیریت پروژه</h3>
+              <p class="work-tags">React · TypeScript · PostgreSQL</p>
+            </div>
+          </a>
+
+          <!-- Project 06 -->
+          <a href="#" class="work-card group">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+06" alt="لندینگ پیج استارتاپ" loading="lazy">
+              <div class="work-overlay">
+                <span class="work-view">مشاهده پروژه ←</span>
+              </div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">لندینگ پیج استارتاپ</h3>
+              <p class="work-tags">Next.js · Framer Motion</p>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="text-center mt-14">
+          <a href="#start" class="cta-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-fa font-medium text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+            بیا پروژه‌ی تو رو هم بسازیم
+            <span class="font-mono">←</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA section -->
+    <section id="start" class="cta_section relative py-28 overflow-hidden">
+      <div class="absolute inset-0 hero-grid pointer-events-none opacity-60"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full hero-glow pointer-events-none"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6 text-center">
+        <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-5">// LET'S BUILD</p>
+
+        <h2 class="font-fa font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.3] mb-6">
+          پروژه‌ی بعدیت رو<br>
+          از همین‌جا شروع کن
+        </h2>
+
+        <p class="font-fa text-[#9AA1AC] text-lg leading-8 mb-10 max-w-xl mx-auto">
+          برامون بگو دنبال چی هستی، ظرف ۲۴ ساعت باهات تماس می‌گیریم.
+        </p>
+
+        <form class="cta-form flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8" dir="rtl">
+          <input
+            type="email"
+            required
+            placeholder="ایمیلت رو وارد کن"
+            class="cta-input flex-1 px-5 py-3.5 rounded-lg font-fa text-sm text-[#E6E6E6] placeholder:text-[#5C6370] bg-[#11151C] border border-white/10 focus:border-[#F2A65A]/50 outline-none transition-colors"
+          >
+          <button type="submit" class="cta-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors whitespace-nowrap">
+            شروع پروژه
+            <span class="font-mono">←</span>
+          </button>
+        </form>
+
+        <p class="font-mono text-xs text-[#5C6370]">
+          یا مستقیم بنویس: <a href="mailto:hello@studio.ir" class="text-[#7FB77E] hover:underline" dir="ltr">hello@studio.ir</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer_section relative border-t border-white/6 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+
+        <!-- Brand -->
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center gap-2 mb-4 w-fit">
+            <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
+            <span class="font-fa font-bold text-lg text-white">استودیو<span class="text-[#F2A65A]">.</span></span>
+          </a>
+          <p class="font-fa text-sm text-[#9AA1AC] leading-7 max-w-xs">
+            طراحی و توسعه‌ی وب‌سایت‌هایی سریع، بی‌نقص و خوش‌ساخت؛ از اولین خط کد تا لانچ نهایی.
+          </p>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// MENU</p>
+          <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
+            <li><a href="#home" class="footer-link">خانه</a></li>
+            <li><a href="#about" class="footer-link">درباره ما</a></li>
+            <li><a href="#services" class="footer-link">خدمات</a></li>
+            <li><a href="#work" class="footer-link">نمونه‌کارها</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// CONTACT</p>
+          <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
+            <li dir="ltr" class="text-right"><a href="mailto:hello@studio.ir" class="footer-link">hello@studio.ir</a></li>
+            <li dir="ltr" class="text-right"><a href="tel:+982100000000" class="footer-link">+98 21 0000 0000</a></li>
+          </ul>
+          <div class="flex items-center gap-4 mt-5">
+            <a href="#" class="social-icon" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.7" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 4L3 11.5l6 2m12-9.5l-3.5 16-8.5-6.5m12-9.5L9 13.5"/></svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.06]">
+        <p class="font-mono text-xs text-[#5C6370]" dir="ltr">© 2026 studio.ir — all rights reserved</p>
+        <p class="font-mono text-xs text-[#5C6370]" dir="ltr">/* built with care */</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="src/js/app.js"></script>
+</body>
+</html>
