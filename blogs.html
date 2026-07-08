@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/output.css">
+    <link rel="stylesheet" href="src/styles/app.css">
+    <title>مقالات</title>
+</head>
+<body class="bg-[#0B0E14] text-[#E6E6E6] font-fa antialiased">
+
+    <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="flex items-center justify-between h-20">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 shrink-0">
+            <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
+            <span class="font-fa font-bold text-lg tracking-tight text-white">نووا لبز<span class="text-[#F2A65A]">.</span></span>
+            </a>
+
+            <!-- Desktop nav -->
+            <nav class="hidden md:flex items-center gap-10 font-fa text-[15px] text-[#B8BEC9]">
+            <a href="/index.html" class="nav-link relative py-2">خانه</a>
+            <a href="/samples.html" class="nav-link relative py-2">نمونه‌کارها</a>
+            <a href="/blogs.html" class="nav-link relative py-2">مقالات</a>
+            <a href="/about-us.html" class="nav-link relative py-2">درباره ما</a>
+            <a href="/contact-us.html" class="nav-link relative py-2">تماس با ما</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="hidden md:block">
+            <a href="#start" class="cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+                شروع پروژه
+                <span class="font-mono">←</span>
+            </a>
+            </div>
+
+            <!-- Mobile toggle -->
+            <button id="menu-toggle" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 shrink-0" aria-label="باز کردن منو">
+            <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+            <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+            <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+            </button>
+        </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-[#0D1117] border-t border-white/5">
+        <nav class="flex flex-col px-6 py-6 gap-5 font-fa text-[#B8BEC9]">
+            <a href="#home" class="py-1">خانه</a>
+            <a href="#about" class="py-1">درباره ما</a>
+            <a href="#work" class="py-1">نمونه‌کارها</a>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page intro -->
+        <section class="blog-hero relative pt-40 pb-16 overflow-hidden">
+        <div class="absolute inset-0 hero-grid pointer-events-none opacity-50"></div>
+        <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-full hero-glow pointer-events-none"></div>
+
+        <div class="relative max-w-3xl mx-auto px-6 lg:px-10 text-center">
+            <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-5">// BLOG</p>
+            <h1 class="font-fa font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.3] mb-6">
+            مقالات و یادداشت‌ها
+            </h1>
+            <p class="font-fa text-[#9AA1AC] text-lg leading-8">
+            نکته‌ها و تجربه‌هامون درباره‌ی طراحی، توسعه و دنیای وب.
+            </p>
+        </div>
+        </section>
+
+        <!-- Filters + Grid -->
+        <section class="blog-list_section relative pb-24">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+            <!-- Category filters -->
+            <div class="blog-filters" id="blog-filters">
+            <button class="blog-filter is-active" data-filter="all">همه</button>
+            <button class="blog-filter" data-filter="frontend">فرانت‌اند</button>
+            <button class="blog-filter" data-filter="backend">بک‌اند</button>
+            <button class="blog-filter" data-filter="seo">سئو</button>
+            <button class="blog-filter" data-filter="design">طراحی</button>
+            <button class="blog-filter" data-filter="upgrade">آپگرید</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-grid">
+
+            <a href="/blog/nextjs-vs-react" class="blog-card" data-category="frontend">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="مقایسه Next.js و React" loading="lazy">
+                <span class="blog-cat">فرانت‌اند</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۱۵ تیر ۱۴۰۵ · ۶ دقیقه مطالعه</p>
+                <h3 class="blog-title">فرق Next.js با React خام تو چیه؟</h3>
+                <p class="blog-excerpt">بررسی تفاوت‌های کلیدی، مزایا و اینکه کِی کدوم رو انتخاب کنی.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/seo-basics" class="blog-card" data-category="seo">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="اصول سئو فنی" loading="lazy">
+                <span class="blog-cat">سئو</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۸ تیر ۱۴۰۵ · ۴ دقیقه مطالعه</p>
+                <h3 class="blog-title">۵ اشتباه رایج سئو که سایتتو عقب نگه می‌داره</h3>
+                <p class="blog-excerpt">چک‌لیستی ساده برای شناسایی و رفع مشکلات فنی سئو.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/old-site-migration" class="blog-card" data-category="upgrade">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="مهاجرت سایت قدیمی" loading="lazy">
+                <span class="blog-cat">آپگرید</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۱ تیر ۱۴۰۵ · ۷ دقیقه مطالعه</p>
+                <h3 class="blog-title">چطور سایت قدیمی رو بدون از دست دادن رنکینگ آپدیت کنیم؟</h3>
+                <p class="blog-excerpt">راهنمای گام‌به‌گام مهاجرت امن به تکنولوژی جدید.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/node-vs-laravel" class="blog-card" data-category="backend">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="مقایسه Node و Laravel" loading="lazy">
+                <span class="blog-cat">بک‌اند</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۲۵ خرداد ۱۴۰۵ · ۵ دقیقه مطالعه</p>
+                <h3 class="blog-title">Node.js یا Laravel؛ کدوم برای پروژه‌ت بهتره؟</h3>
+                <p class="blog-excerpt">مقایسه‌ی عملکرد، سرعت توسعه و مقیاس‌پذیری این دو.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/ux-mistakes" class="blog-card" data-category="design">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="اشتباهات رایج UX" loading="lazy">
+                <span class="blog-cat">طراحی</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۱۸ خرداد ۱۴۰۵ · ۴ دقیقه مطالعه</p>
+                <h3 class="blog-title">۷ اشتباه رایج UX که کاربرات رو فراری می‌ده</h3>
+                <p class="blog-excerpt">از فرم‌های پیچیده تا ناوبری گیج‌کننده؛ چک‌لیستی کاربردی.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/core-web-vitals" class="blog-card" data-category="seo">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="Core Web Vitals" loading="lazy">
+                <span class="blog-cat">سئو</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۱۰ خرداد ۱۴۰۵ · ۶ دقیقه مطالعه</p>
+                <h3 class="blog-title">Core Web Vitals چیه و چرا رتبه‌ی سایتتو عوض می‌کنه؟</h3>
+                <p class="blog-excerpt">راهنمای ساده‌ی سه معیار اصلی گوگل برای سرعت و تجربه‌ی کاربری.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/tailwind-tips" class="blog-card" data-category="frontend">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="ترفندهای Tailwind" loading="lazy">
+                <span class="blog-cat">فرانت‌اند</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۲ خرداد ۱۴۰۵ · ۵ دقیقه مطالعه</p>
+                <h3 class="blog-title">۱۰ ترفند Tailwind که کدتو تمیزتر می‌کنه</h3>
+                <p class="blog-excerpt">از کلاس‌های سفارشی تا مدیریت بهتر رسپانسیو بودن.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/api-security" class="blog-card" data-category="backend">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="امنیت API" loading="lazy">
+                <span class="blog-cat">بک‌اند</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۲۵ اردیبهشت ۱۴۰۵ · ۷ دقیقه مطالعه</p>
+                <h3 class="blog-title">اصول پایه‌ای امنیت API که هیچ‌وقت نباید فراموش کنی</h3>
+                <p class="blog-excerpt">از احراز هویت تا rate limiting؛ یه چک‌لیست عملی.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            <a href="/blog/color-theory" class="blog-card" data-category="design">
+                <div class="blog-thumb">
+                <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Article" alt="تئوری رنگ در طراحی وب" loading="lazy">
+                <span class="blog-cat">طراحی</span>
+                </div>
+                <div class="blog-info">
+                <p class="blog-meta">۱۵ اردیبهشت ۱۴۰۵ · ۴ دقیقه مطالعه</p>
+                <h3 class="blog-title">چطور یه پالت رنگی حرفه‌ای برای سایتت انتخاب کنی</h3>
+                <p class="blog-excerpt">اصول ساده‌ای که خیلی از طراح‌ها رعایتشون نمی‌کنن.</p>
+                <span class="blog-readmore">ادامه مطلب ←</span>
+                </div>
+            </a>
+
+            </div>
+
+            <p id="blog-empty" class="hidden text-center font-fa text-[#6B7280] mt-14">
+            مقاله‌ای تو این دسته‌بندی پیدا نشد.
+            </p>
+
+        </div>
+        </section>
+
+    </main>
+
+    <footer class="footer_section relative border-t border-white/[0.06] pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+
+            <div class="lg:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-4 w-fit">
+                <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
+                <span class="font-fa font-bold text-lg text-white">استودیو<span class="text-[#F2A65A]">.</span></span>
+            </a>
+            <p class="font-fa text-sm text-[#9AA1AC] leading-7 max-w-xs">
+                طراحی و توسعه‌ی وب‌سایت‌هایی سریع، بی‌نقص و خوش‌ساخت؛ از اولین خط کد تا لانچ نهایی.
+            </p>
+            </div>
+
+            <div>
+            <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// MENU</p>
+            <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
+                <li><a href="index.html#home" class="footer-link">خانه</a></li>
+                <li><a href="about.html" class="footer-link">درباره ما</a></li>
+                <li><a href="index.html#services" class="footer-link">خدمات</a></li>
+                <li><a href="index.html#work" class="footer-link">نمونه‌کارها</a></li>
+            </ul>
+            </div>
+
+            <div>
+            <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// CONTACT</p>
+            <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
+                <li dir="ltr" class="text-right"><a href="mailto:hello@studio.ir" class="footer-link">hello@studio.ir</a></li>
+                <li dir="ltr" class="text-right"><a href="tel:+982100000000" class="footer-link">+98 21 0000 0000</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.06]">
+            <p class="font-mono text-xs text-[#5C6370]" dir="ltr">© 2026 studio.ir — all rights reserved</p>
+            <p class="font-mono text-xs text-[#5C6370]" dir="ltr">/* built with care */</p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+</html>

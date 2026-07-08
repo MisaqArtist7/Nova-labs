@@ -8,13 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles/output.css">
   <link rel="stylesheet" href="src/styles/app.css">
-  <title>درباره ما</title>
+  <title>نمونه‌کارها</title>
 </head>
 <body class="bg-[#0B0E14] text-[#E6E6E6] font-fa antialiased">
-  <svg class="hidden">
-    
-  </svg>
-  
+
   <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="flex items-center justify-between h-20">
@@ -57,21 +54,180 @@
         <a href="#home" class="py-1">خانه</a>
         <a href="#about" class="py-1">درباره ما</a>
         <a href="#work" class="py-1">نمونه‌کارها</a>
-        <a href="#start" class="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm text-[#0B0E14] bg-[#F2A65A]">شروع پروژه</a>
       </nav>
     </div>
   </header>
 
-  <main></main>
+  <main>
 
-  <footer class="footer_section relative border-t border-white/6 pt-16 pb-8">
+    <!-- Page intro -->
+    <section class="work-hero relative pt-40 pb-16 overflow-hidden">
+      <div class="absolute inset-0 hero-grid pointer-events-none opacity-50"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-full hero-glow pointer-events-none"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6 lg:px-10 text-center">
+        <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-5">// WORK</p>
+        <h1 class="font-fa font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.3] mb-6">
+          همه‌ی نمونه‌کارها
+        </h1>
+        <p class="font-fa text-[#9AA1AC] text-lg leading-8">
+          مجموعه‌ای از پروژه‌هایی که طراحی و توسعه دادیم؛ از فروشگاه‌های آنلاین تا سامانه‌های مدیریتی.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters + Grid -->
+    <section class="work-list_section relative pb-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <!-- Category filters -->
+        <div class="blog-filters" id="work-filters">
+          <button class="blog-filter is-active" data-filter="all">همه</button>
+          <button class="blog-filter" data-filter="ecommerce">فروشگاهی</button>
+          <button class="blog-filter" data-filter="dashboard">داشبورد و سامانه</button>
+          <button class="blog-filter" data-filter="corporate">شرکتی</button>
+          <button class="blog-filter" data-filter="landing">لندینگ پیج</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="work-grid">
+
+          <a href="#" class="work-card" data-category="ecommerce">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+01" alt="فروشگاه آنلاین دیجی‌کالا" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">فروشگاه آنلاین دیجی‌کالا</h3>
+              <p class="work-tags">Next.js · Tailwind · Stripe</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="dashboard">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+02" alt="سامانه مدیریت رستوران" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">سامانه مدیریت رستوران</h3>
+              <p class="work-tags">Laravel · Vue.js · MySQL</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="dashboard">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+03" alt="پلتفرم آموزش آنلاین" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">پلتفرم آموزش آنلاین</h3>
+              <p class="work-tags">React · Node.js · MongoDB</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="corporate">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+04" alt="بازسازی سایت شرکتی قدیمی" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">بازسازی سایت شرکتی قدیمی</h3>
+              <p class="work-tags">Next.js · Migration · SEO</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="dashboard">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+05" alt="اپلیکیشن مدیریت پروژه" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">اپلیکیشن مدیریت پروژه</h3>
+              <p class="work-tags">React · TypeScript · PostgreSQL</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="landing">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+06" alt="لندینگ پیج استارتاپ" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">لندینگ پیج استارتاپ فین‌تک</h3>
+              <p class="work-tags">Next.js · Framer Motion</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="ecommerce">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+07" alt="فروشگاه پوشاک آنلاین" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">فروشگاه پوشاک آنلاین</h3>
+              <p class="work-tags">Laravel · Livewire · MySQL</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="corporate">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+08" alt="سایت شرکتی حمل‌ونقل" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">سایت شرکتی حمل‌ونقل</h3>
+              <p class="work-tags">Next.js · Tailwind</p>
+            </div>
+          </a>
+
+          <a href="#" class="work-card" data-category="landing">
+            <div class="work-thumb">
+              <img src="https://via.placeholder.com/600x400/151922/6B7280?text=Project+09" alt="لندینگ کلینیک زیبایی" loading="lazy">
+              <div class="work-overlay"><span class="work-view">مشاهده پروژه ←</span></div>
+            </div>
+            <div class="work-info">
+              <h3 class="work-title">لندینگ پیج کلینیک زیبایی</h3>
+              <p class="work-tags">React · Tailwind</p>
+            </div>
+          </a>
+
+        </div>
+
+        <p id="work-empty" class="hidden text-center font-fa text-[#6B7280] mt-14">
+          پروژه‌ای تو این دسته‌بندی پیدا نشد.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta_section relative py-28 overflow-hidden border-t border-white/[0.06]">
+      <div class="absolute inset-0 hero-grid pointer-events-none opacity-60"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] rounded-full hero-glow pointer-events-none"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6 text-center">
+        <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-5">// LET'S BUILD</p>
+        <h2 class="font-fa font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.3] mb-6">
+          پروژه‌ی بعدی، پروژه‌ی توئه
+        </h2>
+        <p class="font-fa text-[#9AA1AC] text-lg leading-8 mb-10 max-w-xl mx-auto">
+          بیا درباره‌ی ایده‌ت حرف بزنیم.
+        </p>
+        <a href="contact.html" class="cta-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-fa font-medium text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+          شروع پروژه
+          <span class="font-mono">←</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer_section relative border-t border-white/[0.06] pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
-        <!-- Brand -->
         <div class="lg:col-span-2">
-          <a href="#" class="flex items-center gap-2 mb-4 w-fit">
+          <a href="index.html" class="flex items-center gap-2 mb-4 w-fit">
             <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
             <span class="font-fa font-bold text-lg text-white">استودیو<span class="text-[#F2A65A]">.</span></span>
           </a>
@@ -80,35 +236,22 @@
           </p>
         </div>
 
-        <!-- Navigation -->
         <div>
           <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// MENU</p>
           <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
-            <li><a href="#home" class="footer-link">خانه</a></li>
-            <li><a href="#about" class="footer-link">درباره ما</a></li>
-            <li><a href="#services" class="footer-link">خدمات</a></li>
-            <li><a href="#work" class="footer-link">نمونه‌کارها</a></li>
+            <li><a href="index.html#home" class="footer-link">خانه</a></li>
+            <li><a href="about.html" class="footer-link">درباره ما</a></li>
+            <li><a href="index.html#services" class="footer-link">خدمات</a></li>
+            <li><a href="work.html" class="footer-link">نمونه‌کارها</a></li>
           </ul>
         </div>
 
-        <!-- Contact -->
         <div>
           <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// CONTACT</p>
           <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
             <li dir="ltr" class="text-right"><a href="mailto:hello@studio.ir" class="footer-link">hello@studio.ir</a></li>
             <li dir="ltr" class="text-right"><a href="tel:+982100000000" class="footer-link">+98 21 0000 0000</a></li>
           </ul>
-          <div class="flex items-center gap-4 mt-5">
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.7" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 4L3 11.5l6 2m12-9.5l-3.5 16-8.5-6.5m12-9.5L9 13.5"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
         </div>
       </div>
 

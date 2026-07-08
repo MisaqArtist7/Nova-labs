@@ -751,3 +751,260 @@ html {
 .blog-card:hover .blog-readmore {
     color: #f5b877;
 }
+
+/* ---------- Contact page ---------- */
+
+.contact-form-wrap {
+    border-radius: 0.9rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #0D1117;
+}
+
+.contact-form-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.9rem 1.25rem;
+    background: #11151C;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-form {
+    padding: 1.75rem;
+}
+
+.contact-label {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #6B7280;
+    margin-bottom: 0.5rem;
+}
+
+.contact-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border-radius: 0.6rem;
+    background: #11151C;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #E6E6E6;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-input::placeholder {
+  color: #4B5563;
+}
+
+.contact-input:focus {
+    border-color: rgba(242, 166, 90, 0.5);
+    background: #151922;
+}
+
+select.contact-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 1rem center;
+}
+
+textarea.contact-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-note {
+    margin-top: 1rem;
+    font-size: 0.72rem;
+    color: #5C6370;
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.35rem;
+    border-radius: 0.85rem;
+    background: #11151C;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.contact-info-card:hover {
+    border-color: rgba(242, 166, 90, 0.25);
+    transform: translateX(-3px);
+}
+
+.contact-info-card .svc-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.contact-info-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #6B7280;
+    margin-bottom: 0.35rem;
+}
+
+.contact-info-value {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.92rem;
+    color: #E6E6E6;
+    line-height: 1.7;
+    transition: color 0.2s ease;
+}
+
+a.contact-info-value:hover {
+    color: #F2A65A;
+}
+
+/* ---------- Team (large bio cards) ---------- */
+
+.team-card-lg {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-radius: 0.9rem;
+    background: #11151C;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.team-card-lg:hover {
+    border-color: rgba(242, 166, 90, 0.25);
+    transform: translateY(-3px);
+}
+
+.team-avatar-lg {
+    flex-shrink: 0;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(242, 166, 90, 0.1);
+    color: #F2A65A;
+    font-family: 'Vazirmatn', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.team-name-lg {
+    font-family: 'Vazirmatn', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    margin-bottom: 0.25rem;
+}
+
+.team-role-lg {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.8rem;
+    color: #F2A65A;
+    margin-bottom: 0.75rem;
+}
+
+.team-bio {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.87rem;
+    line-height: 1.85;
+    color: #9AA1AC;
+    margin-bottom: 1rem;
+}
+
+.team-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.team-skill {
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: #7FB77E;
+    background: rgba(127, 183, 126, 0.08);
+    border: 1px solid rgba(127, 183, 126, 0.15);
+    direction: ltr;
+}
+
+.team-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.team-socials a {
+    color: #6B7280;
+    transition: color 0.2s ease;
+}
+
+.team-socials a:hover {
+    color: #F2A65A;
+}
+
+.team-socials svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* ---------- Stats ---------- */
+
+.stat-card {
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.stat-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: #fff;
+    direction: ltr;
+}
+
+.stat-label {
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.85rem;
+    color: #9AA1AC;
+    margin-top: 0.4rem;
+}
+
+/* ---------- Blog filters ---------- */
+
+.blog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2.5rem;
+}
+
+.blog-filter {
+    padding: 0.55rem 1.2rem;
+    border-radius: 999px;
+    font-family: 'Vazirmatn', sans-serif;
+    font-size: 0.85rem;
+    color: #9AA1AC;
+    background: #11151C;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.blog-filter:hover {
+    color: #E6E6E6;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.blog-filter.is-active {
+    color: #0B0E14;
+    background: #F2A65A;
+    border-color: #F2A65A;
+}

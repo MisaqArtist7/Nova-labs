@@ -154,3 +154,61 @@
     }
     });
 });
+
+/* ---------- Contact form ---------- */
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // اینجا باید به سرویس ارسال ایمیل (مثل Formspree) یا API خودت وصل بشه
+        console.log('Form submitted:', Object.fromEntries(new FormData(contactForm)));
+        alert('پیامت ارسال شد! به‌زودی باهات تماس می‌گیریم.');
+        contactForm.reset();
+        });
+    }
+
+    /* ---------- Blog filters ---------- */
+    const filterButtons = document.querySelectorAll('.blog-filter');
+    const blogCards = document.querySelectorAll('#blog-grid .blog-card');
+    const blogEmpty = document.getElementById('blog-empty');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const filter = btn.dataset.filter;
+        let visibleCount = 0;
+
+        blogCards.forEach(card => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+        });
+
+        blogEmpty.classList.toggle('hidden', visibleCount > 0);
+        });
+    });
+
+    /* ---------- Work filters ---------- */
+    const workFilterButtons = document.querySelectorAll('#work-filters .blog-filter');
+    const workCards = document.querySelectorAll('#work-grid .work-card');
+    const workEmpty = document.getElementById('work-empty');
+
+    workFilterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+        workFilterButtons.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const filter = btn.dataset.filter;
+        let visibleCount = 0;
+
+        workCards.forEach(card => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.style.display = match ? '' : 'none';
+            if (match) visibleCount++;
+        });
+
+        workEmpty.classList.toggle('hidden', visibleCount > 0);
+        });
+    });
