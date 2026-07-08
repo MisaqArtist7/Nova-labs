@@ -8,41 +8,33 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/styles/output.css">
   <link rel="stylesheet" href="src/styles/app.css">
-  <title>درباره</title>
+  <title>تماس با ما</title>
 </head>
 <body class="bg-[#0B0E14] text-[#E6E6E6] font-fa antialiased">
-  <svg class="hidden">
-    
-  </svg>
-  
+
   <header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
       <div class="flex items-center justify-between h-20">
 
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-2 shrink-0">
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
           <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
-          <span class="font-fa font-bold text-lg tracking-tight text-white">نووا لبز<span class="text-[#F2A65A]">.</span></span>
+          <span class="font-fa font-bold text-lg tracking-tight text-white">استودیو<span class="text-[#F2A65A]">.</span></span>
         </a>
 
-        <!-- Desktop nav -->
         <nav class="hidden md:flex items-center gap-10 font-fa text-[15px] text-[#B8BEC9]">
-          <a href="/index.html" class="nav-link relative py-2">خانه</a>
-          <a href="/samples.html" class="nav-link relative py-2">نمونه‌کارها</a>
-          <a href="/blogs.html" class="nav-link relative py-2">مقالات</a>
-          <a href="/about-us.html" class="nav-link relative py-2">درباره ما</a>
-          <a href="/contact-us.html" class="nav-link relative py-2">تماس با ما</a>
+          <a href="index.html#home" class="nav-link relative py-2">خانه</a>
+          <a href="index.html#about" class="nav-link relative py-2">درباره ما</a>
+          <a href="index.html#work" class="nav-link relative py-2">نمونه‌کارها</a>
+          <a href="contact.html" class="nav-link relative py-2 text-[#F2A65A]">تماس با ما</a>
         </nav>
 
-        <!-- CTA -->
         <div class="hidden md:block">
-          <a href="#start" class="cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+          <a href="index.html#start" class="cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
             شروع پروژه
             <span class="font-mono">←</span>
           </a>
         </div>
 
-        <!-- Mobile toggle -->
         <button id="menu-toggle" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 shrink-0" aria-label="باز کردن منو">
           <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
           <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
@@ -51,26 +43,161 @@
       </div>
     </div>
 
-    <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-[#0D1117] border-t border-white/5">
       <nav class="flex flex-col px-6 py-6 gap-5 font-fa text-[#B8BEC9]">
-        <a href="#home" class="py-1">خانه</a>
-        <a href="#about" class="py-1">درباره ما</a>
-        <a href="#work" class="py-1">نمونه‌کارها</a>
-        <a href="#start" class="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm text-[#0B0E14] bg-[#F2A65A]">شروع پروژه</a>
+        <a href="index.html#home" class="py-1">خانه</a>
+        <a href="index.html#about" class="py-1">درباره ما</a>
+        <a href="index.html#work" class="py-1">نمونه‌کارها</a>
+        <a href="contact.html" class="py-1 text-[#F2A65A]">تماس با ما</a>
+        <a href="index.html#start" class="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-medium text-sm text-[#0B0E14] bg-[#F2A65A]">شروع پروژه</a>
       </nav>
     </div>
   </header>
 
+  <main>
+    <section class="contact_section relative pt-40 pb-24 overflow-hidden">
+
+      <div class="absolute inset-0 hero-grid pointer-events-none opacity-50"></div>
+      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-full hero-glow pointer-events-none"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <p class="font-mono text-xs tracking-widest text-[#F2A65A] mb-4">// CONTACT</p>
+          <h1 class="font-fa font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white mb-5 leading-[1.3]">
+            بیا با هم حرف بزنیم
+          </h1>
+          <p class="font-fa text-[#9AA1AC] text-lg leading-8">
+            برای شروع پروژه، مشاوره یا فقط یه سلام؛ خوشحال می‌شیم بشنویم.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-5 gap-6 lg:gap-8 items-start">
+
+          <!-- Contact form -->
+          <div class="lg:col-span-3 contact-form-wrap">
+            <div class="contact-form-header">
+              <span class="w-3 h-3 rounded-full bg-[#FF5F56]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#27C93F]"></span>
+              <span class="mr-2 font-mono text-xs text-[#6B7280]" dir="ltr">new-message.js</span>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+              <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                <div class="contact-field">
+                  <label class="contact-label" for="c-name">نام و نام‌خانوادگی</label>
+                  <input class="contact-input" type="text" id="c-name" name="name" placeholder="مثلاً علی محمدی" required>
+                </div>
+                <div class="contact-field">
+                  <label class="contact-label" for="c-email">ایمیل</label>
+                  <input class="contact-input" type="email" id="c-email" name="email" placeholder="you@example.com" dir="ltr" required>
+                </div>
+              </div>
+
+              <div class="contact-field mb-5">
+                <label class="contact-label" for="c-subject">موضوع</label>
+                <select class="contact-input" id="c-subject" name="subject">
+                  <option value="new-project">شروع یک پروژه جدید</option>
+                  <option value="question">سوال عمومی</option>
+                  <option value="collab">پیشنهاد همکاری</option>
+                  <option value="support">پشتیبانی پروژه فعلی</option>
+                </select>
+              </div>
+
+              <div class="contact-field mb-6">
+                <label class="contact-label" for="c-message">پیام شما</label>
+                <textarea class="contact-input" id="c-message" name="message" rows="5" placeholder="کمی درباره پروژه‌ت برامون بنویس..." required></textarea>
+              </div>
+
+              <button type="submit" class="cta-btn w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg font-fa font-medium text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+                ارسال پیام
+                <span class="font-mono">←</span>
+              </button>
+
+              <p class="contact-note font-mono">// avg. response time: ~2h</p>
+            </form>
+          </div>
+
+          <!-- Contact info -->
+          <div class="lg:col-span-2 flex flex-col gap-5">
+
+            <div class="contact-info-card">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <rect x="3.5" y="5.5" width="17" height="13" rx="2"/>
+                  <path d="M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-info-label">ایمیل</p>
+                <a href="mailto:hello@studio.ir" class="contact-info-value" dir="ltr">hello@studio.ir</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M5 4h3.5l1.5 4.5-2 1.5a12 12 0 006 6l1.5-2 4.5 1.5V19a2 2 0 01-2.2 2C10.5 20.5 3.5 13.5 3 6.2A2 2 0 015 4z" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-info-label">تلفن</p>
+                <a href="tel:+982100000000" class="contact-info-value" dir="ltr">+98 21 0000 0000</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M12 21s7-6.2 7-11.5A7 7 0 105 9.5C5 14.8 12 21 12 21z" stroke-linejoin="round"/>
+                  <circle cx="12" cy="9.5" r="2.3"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-info-label">آدرس</p>
+                <p class="contact-info-value">تهران، خیابان ولیعصر، پلاک ۱۲۳</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="svc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <circle cx="12" cy="12" r="8.5"/>
+                  <path d="M12 7.5V12l3 2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="contact-info-label">ساعات پاسخگویی</p>
+                <p class="contact-info-value">شنبه تا چهارشنبه، ۹ تا ۱۸</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-4 pt-2">
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.7" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="Telegram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 4L3 11.5l6 2m12-9.5l-3.5 16-8.5-6.5m12-9.5L9 13.5"/></svg>
+              </a>
+              <a href="#" class="social-icon" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer_section relative border-t border-white/6 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
-        <!-- Brand -->
         <div class="lg:col-span-2">
-          <a href="#" class="flex items-center gap-2 mb-4 w-fit">
+          <a href="index.html" class="flex items-center gap-2 mb-4 w-fit">
             <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
             <span class="font-fa font-bold text-lg text-white">استودیو<span class="text-[#F2A65A]">.</span></span>
           </a>
@@ -79,35 +206,22 @@
           </p>
         </div>
 
-        <!-- Navigation -->
         <div>
           <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// MENU</p>
           <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
-            <li><a href="#home" class="footer-link">خانه</a></li>
-            <li><a href="#about" class="footer-link">درباره ما</a></li>
-            <li><a href="#services" class="footer-link">خدمات</a></li>
-            <li><a href="#work" class="footer-link">نمونه‌کارها</a></li>
+            <li><a href="index.html#home" class="footer-link">خانه</a></li>
+            <li><a href="index.html#about" class="footer-link">درباره ما</a></li>
+            <li><a href="index.html#services" class="footer-link">خدمات</a></li>
+            <li><a href="index.html#work" class="footer-link">نمونه‌کارها</a></li>
           </ul>
         </div>
 
-        <!-- Contact -->
         <div>
           <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// CONTACT</p>
           <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
             <li dir="ltr" class="text-right"><a href="mailto:hello@studio.ir" class="footer-link">hello@studio.ir</a></li>
             <li dir="ltr" class="text-right"><a href="tel:+982100000000" class="footer-link">+98 21 0000 0000</a></li>
           </ul>
-          <div class="flex items-center gap-4 mt-5">
-            <a href="#" class="social-icon" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="4.5"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.2" cy="7.8" r="0.7" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 4L3 11.5l6 2m12-9.5l-3.5 16-8.5-6.5m12-9.5L9 13.5"/></svg>
-            </a>
-            <a href="#" class="social-icon" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 00-1.3-3.2 4.2 4.2 0 00-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 00-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 00-.1 3.2A4.6 4.6 0 004 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
         </div>
       </div>
 

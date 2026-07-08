@@ -129,3 +129,28 @@
         typeLines();
     }
     });
+
+    /* ---------- FAQ accordion ---------- */
+    document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', () => {
+    const isOpen = item.classList.contains('is-open');
+
+    document.querySelectorAll('.faq-item.is-open').forEach(openItem => {
+        if (openItem !== item) {
+            openItem.classList.remove('is-open');
+            openItem.querySelector('.faq-answer').style.maxHeight = '0px';
+        }
+    });
+
+    if (isOpen) {
+        item.classList.remove('is-open');
+        answer.style.maxHeight = '0px';
+    } else {
+        item.classList.add('is-open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+    });
+});
