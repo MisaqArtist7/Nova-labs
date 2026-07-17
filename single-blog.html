@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>چرا جزئیات کوچک، تجربه‌ی کاربری را می‌سازند — نووا لبز</title>
+<style>
+:root{
+    --bg:#0B0E14; --surface:#0D1117; --line:rgba(255,255,255,.08);
+    --ink:#E6E6E6; --muted:#B8BEC9; --accent:#F2A65A; --accent-soft:#F2A65A22;
+    --mint:#7EE787;
+}
+*{scroll-behavior:smooth}
+body{background:var(--bg);}
+.font-fa{font-family:'Vazirmatn',sans-serif}
+.font-mono{font-family:'JetBrains Mono',monospace}
+.nav-link::after{content:'';position:absolute;right:0;bottom:0;height:1px;width:0;background:var(--accent);transition:width .25s ease}
+.nav-link:hover::after{width:100%}
+.nav-link:hover{color:var(--ink)}
+.cta-btn{box-shadow:0 0 0 0 rgba(242,166,90,.4)}
+.cta-btn:hover{box-shadow:0 0 24px 0 rgba(242,166,90,.35)}
+
+/* progress bar signature */
+#progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--accent),var(--mint));z-index:60;transition:width .1s linear}
+
+/* code block */
+.code-block{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.code-head{display:flex;align-items:center;justify-content:space-between;padding:.6rem 1rem;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--muted)}
+.code-dots span{display:inline-block;width:9px;height:9px;border-radius:50%;margin-inline-start:6px}
+.code-body{direction:ltr;text-align:left;padding:1.1rem 1.25rem;font-family:'JetBrains Mono',monospace;font-size:.82rem;line-height:1.9;color:var(--ink);overflow-x:auto}
+.code-body .tok-kw{color:var(--mint)}
+.code-body .tok-str{color:var(--accent)}
+.code-body .tok-com{color:var(--muted)}
+
+/* toc */
+.toc-link{position:relative;padding-inline-start:1rem;border-inline-start:1px solid var(--line);transition:.2s}
+.toc-link.active{color:var(--accent);border-inline-start-color:var(--accent)}
+
+/* blockquote */
+blockquote.term{background:var(--surface);border:1px solid var(--line);border-inline-start:2px solid var(--accent);border-radius:10px}
+
+/* headings marker */
+.h-mark{color:var(--accent);font-family:'JetBrains Mono',monospace}
+
+::selection{background:var(--accent-soft);color:var(--accent)}
+
+.reveal{opacity:0;transform:translateY(18px)}
+.reveal.in{opacity:1;transform:translateY(0);transition:opacity .7s ease, transform .7s ease}
+
+@media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body class="bg-[#0B0E14] text-[#E6E6E6] font-fa antialiased">
+
+<div id="progress"></div>
+
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-[#0B0E14]/80 backdrop-blur-md border-b border-white/5">
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-20">
+    <a href="#" class="flex items-center gap-2 shrink-0">
+        <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
+        <span class="font-fa font-bold text-lg tracking-tight text-white">نووا لبز<span class="text-[#F2A65A]">.</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-10 font-fa text-[15px] text-[#B8BEC9]">
+        <a href="/index.html" class="nav-link relative py-2">خانه</a>
+        <a href="/samples.html" class="nav-link relative py-2">نمونه‌کارها</a>
+        <a href="/blogs.html" class="nav-link relative py-2 text-white">مقالات</a>
+        <a href="/about-us.html" class="nav-link relative py-2">درباره ما</a>
+        <a href="/contact-us.html" class="nav-link relative py-2">تماس با ما</a>
+    </nav>
+    <div class="hidden md:block">
+        <a href="#start" class="cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+        شروع پروژه
+        <span class="font-mono">←</span>
+        </a>
+    </div>
+    <button id="menu-toggle" class="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 shrink-0" aria-label="باز کردن منو">
+        <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+        <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+        <span class="menu-bar w-6 h-[1.5px] bg-[#E6E6E6] transition-all duration-300"></span>
+    </button>
+    </div>
+</div>
+<div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-[#0D1117] border-t border-white/5">
+    <nav class="flex flex-col px-6 py-6 gap-5 font-fa text-[#B8BEC9]">
+    <a href="/index.html" class="py-1">خانه</a>
+    <a href="/samples.html" class="py-1">نمونه‌کارها</a>
+    <a href="/blogs.html" class="py-1 text-white">مقالات</a>
+    <a href="/about-us.html" class="py-1">درباره ما</a>
+    <a href="/contact-us.html" class="py-1">تماس با ما</a>
+    </nav>
+</div>
+</header>
+
+<main class="pt-20">
+
+<!-- Hero -->
+<section class="max-w-4xl mx-auto px-6 lg:px-10 pt-16 pb-10 reveal" data-reveal>
+    <div class="font-mono text-xs text-[#F2A65A] mb-5">// مقاله · طراحی رابط کاربری</div>
+    <h1 class="font-fa font-extrabold text-3xl md:text-5xl leading-[1.35] text-white mb-6">
+    چرا جزئیات کوچک، تجربه‌ی کاربری را می‌سازند
+    </h1>
+    <p class="text-[#B8BEC9] text-lg leading-8 mb-8">
+    یک دکمه که درست واکنش نشان می‌دهد، مهم‌تر از صد ویژگی جدید است. در این مقاله نشان می‌دهیم چطور جزئیات کوچک، اعتماد کاربر را می‌سازند.
+    </p>
+    <div class="flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-xs text-[#B8BEC9] border-y border-white/5 py-4">
+    <span class="flex items-center gap-2">
+        <span class="w-7 h-7 rounded-full bg-[#F2A65A]/15 text-[#F2A65A] flex items-center justify-center text-[11px] font-bold">آر</span>
+        آرمین رضایی
+    </span>
+    <span>commit_date: 1404/04/26</span>
+    <span>read_time: 8m</span>
+    <span class="text-[#F2A65A]">#ui</span>
+    <span class="text-[#F2A65A]">#micro-interaction</span>
+    </div>
+</section>
+
+<!-- Cover -->
+<section class="max-w-5xl mx-auto px-6 lg:px-10 mb-16 reveal" data-reveal>
+    <div class="code-block">
+    <div class="code-head">
+        <span>hero.motion.tsx</span>
+        <span class="code-dots"><span class="bg-[#3a3f4b]"></span><span class="bg-[#3a3f4b]"></span><span class="bg-[#F2A65A]"></span></span>
+    </div>
+    <div class="code-body">
+<span class="tok-com">// یک تعامل ساده، اثبات این‌که جزئیات دیده می‌شوند</span>
+<span class="tok-kw">button</span>.on(<span class="tok-str">'hover'</span>, () => {
+ease: <span class="tok-str">'power3.out'</span>,
+duration: <span class="tok-str">0.22s</span>,
+scale: <span class="tok-str">1.03</span>
+});
+    </div>
+    </div>
+</section>
+
+<!-- Body + TOC -->
+<section class="max-w-6xl mx-auto px-6 lg:px-10 pb-24">
+    <div class="grid grid-cols-1 lg:grid-cols-[1fr_260px] gap-14">
+
+    <article class="max-w-[680px] font-fa text-[#E6E6E6]">
+
+        <p id="p-intro" class="reveal text-[17px] leading-9 text-[#B8BEC9] mb-10" data-reveal>
+        بیشتر تصمیم‌های طراحی که کاربر آگاهانه به آن‌ها فکر نمی‌کند، همان‌هایی هستند که تجربه را متمایز می‌کنند: سرعت واکنش یک دکمه، لحن یک پیام خطا، فاصله‌ی درست بین دو بخش. این مقاله سه اصل عملی را مرور می‌کند که تیم ما در هر پروژه به آن پایبند است.
+        </p>
+
+        <h2 id="sec-1" class="reveal scroll-mt-28 font-fa font-bold text-2xl text-white mt-14 mb-5 flex items-center gap-3" data-reveal>
+        <span class="h-mark text-sm">01</span> واکنش سریع، اعتماد فوری
+        </h2>
+        <p class="reveal leading-8 text-[#B8BEC9] mb-6" data-reveal>
+        کاربر انتظار ندارد سیستم کامل باشد؛ انتظار دارد سیستم بشنود. تاخیر بیش از ۱۰۰ میلی‌ثانیه در واکنش به یک کلیک، حس کندی می‌سازد حتی اگر کار پشت صحنه سریع انجام شده باشد.
+        </p>
+
+        <blockquote class="term p-5 my-8 reveal" data-reveal>
+        <p class="font-mono text-sm text-[#B8BEC9] leading-7">/* هر تعاملی که بازخورد فوری ندهد، از نظر کاربر خراب است. */</p>
+        </blockquote>
+
+        <h2 id="sec-2" class="reveal scroll-mt-28 font-fa font-bold text-2xl text-white mt-14 mb-5 flex items-center gap-3" data-reveal>
+        <span class="h-mark text-sm">02</span> حرکت باید معنا داشته باشد
+        </h2>
+        <p class="reveal leading-8 text-[#B8BEC9] mb-6" data-reveal>
+        انیمیشن تزئین نیست؛ نشانه است. یک ترنزیشن باید نشان دهد از کجا آمدیم و به کجا می‌رویم، نه اینکه فقط زیبا به نظر برسد.
+        </p>
+        <div class="code-block reveal mb-8" data-reveal>
+        <div class="code-head">
+            <span>transition.css</span>
+            <span class="code-dots"><span class="bg-[#3a3f4b]"></span><span class="bg-[#3a3f4b]"></span><span class="bg-[#7EE787]"></span></span>
+        </div>
+        <div class="code-body">
+.modal {
+<span class="tok-kw">transform-origin</span>: <span class="tok-str">bottom center</span>;
+<span class="tok-kw">transition</span>: transform .3s <span class="tok-str">cubic-bezier(.2,.8,.2,1)</span>;
+}
+        </div>
+        </div>
+
+        <h2 id="sec-3" class="reveal scroll-mt-28 font-fa font-bold text-2xl text-white mt-14 mb-5 flex items-center gap-3" data-reveal>
+        <span class="h-mark text-sm">03</span> سکوت طراحی‌شده
+        </h2>
+        <p class="reveal leading-8 text-[#B8BEC9] mb-10" data-reveal>
+        گاهی بهترین جزئیات، آن چیزی است که حذف می‌کنید. یک صفحه‌ی خالی از شلوغی، فضایی برای تمرکز کاربر می‌سازد؛ این هم بخشی از تجربه است، نه غیبت طراحی.
+        </p>
+
+        <div class="reveal border border-white/5 rounded-xl p-6 bg-[#0D1117] mb-6" data-reveal>
+        <p class="font-mono text-xs text-[#F2A65A] mb-2">note</p>
+        <p class="text-sm text-[#B8BEC9] leading-7">این اصول در پروژه‌های اخیر تیم نووا لبز پیاده‌سازی شده و در بخش نمونه‌کارها قابل بررسی است.</p>
+        </div>
+    </article>
+
+    <!-- TOC -->
+    <aside class="hidden lg:block">
+        <div class="sticky top-28">
+        <p class="font-mono text-xs text-[#B8BEC9] mb-4">فهرست مطالب</p>
+        <nav class="flex flex-col gap-3 text-sm text-[#B8BEC9]">
+            <a href="#sec-1" data-toc class="toc-link">واکنش سریع، اعتماد فوری</a>
+            <a href="#sec-2" data-toc class="toc-link">حرکت باید معنا داشته باشد</a>
+            <a href="#sec-3" data-toc class="toc-link">سکوت طراحی‌شده</a>
+        </nav>
+        <div class="mt-10 pt-6 border-t border-white/5">
+            <a href="#start" class="cta-btn inline-flex items-center gap-2 px-4 py-2.5 rounded-lg font-fa font-medium text-xs text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+            شروع پروژه <span class="font-mono">←</span>
+            </a>
+        </div>
+        </div>
+    </aside>
+    </div>
+</section>
+
+<!-- CTA footer -->
+<section id="start" class="border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10 py-20 text-center reveal" data-reveal>
+    <p class="font-mono text-xs text-[#F2A65A] mb-4">// آماده‌اید؟</p>
+    <h3 class="font-fa font-extrabold text-2xl md:text-3xl text-white mb-6">جزئیات پروژه‌ی بعدی‌تان را با ما بسازید</h3>
+    <a href="/contact-us.html" class="cta-btn inline-flex items-center gap-2 px-6 py-3 rounded-lg font-fa font-medium text-sm text-[#0B0E14] bg-[#F2A65A] hover:bg-[#f5b877] transition-colors duration-200">
+        تماس با ما <span class="font-mono">←</span>
+    </a>
+    </div>
+</section>
+</main>
+
+    <footer class="footer_section relative border-t border-white/6 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+
+            <div class="lg:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-4 w-fit">
+                <span class="font-mono text-lg text-[#F2A65A]">&lt;/&gt;</span>
+                <span class="font-fa font-bold text-lg text-white">استودیو<span class="text-[#F2A65A]">.</span></span>
+            </a>
+            <p class="font-fa text-sm text-[#9AA1AC] leading-7 max-w-xs">
+                طراحی و توسعه‌ی وب‌سایت‌هایی سریع، بی‌نقص و خوش‌ساخت؛ از اولین خط کد تا لانچ نهایی.
+            </p>
+            </div>
+
+            <div>
+            <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// MENU</p>
+            <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
+                <li><a href="index.html#home" class="footer-link">خانه</a></li>
+                <li><a href="about.html" class="footer-link">درباره ما</a></li>
+                <li><a href="index.html#services" class="footer-link">خدمات</a></li>
+                <li><a href="index.html#work" class="footer-link">نمونه‌کارها</a></li>
+            </ul>
+            </div>
+
+            <div>
+            <p class="font-mono text-xs tracking-widest text-[#5C6370] mb-4">// CONTACT</p>
+            <ul class="flex flex-col gap-3 font-fa text-sm text-[#B8BEC9]">
+                <li dir="ltr" class="text-right"><a href="mailto:hello@studio.ir" class="footer-link">hello@studio.ir</a></li>
+                <li dir="ltr" class="text-right"><a href="tel:+982100000000" class="footer-link">+98 21 0000 0000</a></li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.06]">
+            <p class="font-mono text-xs text-[#5C6370]" dir="ltr">© 2026 studio.ir — all rights reserved</p>
+            <p class="font-mono text-xs text-[#5C6370]" dir="ltr">/* built with care */</p>
+        </div>
+        </div>
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+// mobile menu
+const toggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('mobile-menu');
+toggle.addEventListener('click', () => {
+    const open = menu.style.maxHeight && menu.style.maxHeight !== '0px';
+    menu.style.maxHeight = open ? '0px' : menu.scrollHeight + 'px';
+});
+
+// reading progress
+const progress = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progress.style.width = pct + '%';
+});
+
+// reveal on scroll
+const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+// toc active state
+const tocLinks = document.querySelectorAll('[data-toc]');
+const sections = ['sec-1','sec-2','sec-3'].map(id => document.getElementById(id));
+const tocObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+    const link = document.querySelector(`[data-toc][href="#${entry.target.id}"]`);
+    if (entry.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        link && link.classList.add('active');
+    }
+    });
+}, { rootMargin: '-30% 0px -60% 0px' });
+sections.forEach(s => s && tocObserver.observe(s));
+</script>
+</body>
+</html>
+
